@@ -1,0 +1,914 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smart Krushi - Next-Gen AI Agriculture Learning Platform</title>
+  <meta name="description" content="AI-powered modern agriculture platform featuring Rice & Groundnut guides, AI disease detection, agronomist chatbot, real-time agro-weather and farming tips.">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌱</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ========================================================================
+       Top Navigation Bar
+       ======================================================================== -->
+  <header class="site-header">
+    <div class="container navbar">
+      <a href="#home" class="brand-logo" aria-label="Smart Krushi Home">
+        <div class="brand-icon">
+          <i class="fa-solid fa-leaf"></i>
+        </div>
+        <span>Smart Krushi <span class="brand-badge">AI 2.0</span></span>
+      </a>
+
+      <!-- Desktop & Mobile Nav Menu -->
+      <ul class="nav-menu" id="navMenu">
+        <li><a href="#home" class="nav-link active"><i class="fa-solid fa-house"></i> Home</a></li>
+        <li><a href="#crops" class="nav-link"><i class="fa-solid fa-wheat-awn"></i> Crop Info</a></li>
+        <li><a href="#tips" class="nav-link"><i class="fa-solid fa-lightbulb"></i> Farming Tips</a></li>
+        <li><a href="#ai-assistant" class="nav-link"><i class="fa-solid fa-robot"></i> AI Assistant</a></li>
+        <li><a href="#disease-detect" class="nav-link"><i class="fa-solid fa-microscope"></i> Disease Detection</a></li>
+        <li><a href="#weather" class="nav-link"><i class="fa-solid fa-cloud-sun"></i> Weather</a></li>
+        <li><a href="#about" class="nav-link"><i class="fa-solid fa-circle-info"></i> About</a></li>
+        <li><a href="#contact" class="nav-link"><i class="fa-solid fa-phone"></i> Contact</a></li>
+      </ul>
+
+      <!-- Action Utilities -->
+      <div class="nav-actions">
+        <!-- Language Selector -->
+        <select class="lang-select" id="langSelect" aria-label="Select Language">
+          <option value="en">English (EN)</option>
+          <option value="hi">हिंदी (Hindi)</option>
+          <option value="mr">मराठी (Marathi)</option>
+          <option value="te">తెలుగు (Telugu)</option>
+        </select>
+
+        <!-- Theme Toggle -->
+        <button class="btn-icon-pill" id="themeToggleBtn" title="Toggle Theme" aria-label="Toggle Dark/Light Mode">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+
+        <!-- Emergency Helpline Call Button -->
+        <a href="tel:18001801551" class="btn-emergency" title="National Kisan Call Center Toll-Free">
+          <i class="fa-solid fa-headset"></i>
+          <span>1800-180-1551</span>
+        </a>
+
+        <!-- Mobile Hamburger Toggle -->
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle Navigation Menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       1. Home / Hero Section
+       ======================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container hero-grid">
+      <div class="hero-content">
+        <span class="section-badge">
+          <i class="fa-solid fa-sparkles"></i> Empowering Indian & Global Agronomy
+        </span>
+        <h1 id="heroMainTitle">
+          Intelligent Agriculture with <span class="highlight">Smart Krushi AI</span>
+        </h1>
+        <p id="heroSubtitle">
+          Harness cutting-edge artificial intelligence, real-time leaf disease diagnosis, deep cultivation guides for rice & groundnut, and climate-smart advisory to maximize crop yields.
+        </p>
+        
+        <div class="hero-actions">
+          <a href="#ai-assistant" class="btn btn-primary" id="heroCtaAi">
+            <i class="fa-solid fa-robot"></i> Ask AI Assistant
+          </a>
+          <a href="#disease-detect" class="btn btn-accent" id="heroCtaScan">
+            <i class="fa-solid fa-camera-retro"></i> Scan Crop Disease
+          </a>
+          <a href="#crops" class="btn btn-secondary">
+            <i class="fa-solid fa-seedling"></i> Explore Crops
+          </a>
+        </div>
+
+        <div class="hero-stats">
+          <div class="stat-item">
+            <h3>96.8%</h3>
+            <p>AI Diagnostic Accuracy</p>
+          </div>
+          <div class="stat-item">
+            <h3>50+</h3>
+            <p>Crops & Pathogens</p>
+          </div>
+          <div class="stat-item">
+            <h3>24/7</h3>
+            <p>Instant Advisory Support</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hero Visual Showcase: Rice Field & Groundnut Visuals -->
+      <div class="hero-visual-card">
+        <img 
+          src="https://images.unsplash.com/photo-1500937386664-56d1dfef3854?auto=format&fit=crop&w=1000&q=80" 
+          alt="Lush Rice Terraced Field in morning sunlight" 
+          class="hero-banner-img"
+        />
+        <div class="hero-glass-badge">
+          <div>
+            <div style="font-weight: 700; font-size: 0.95rem; margin-bottom: 2px;">
+              Rice Paddies & Groundnut Hub
+            </div>
+            <div style="font-size: 0.78rem; opacity: 0.85;">
+              Active Soil & Canopy Monitoring
+            </div>
+          </div>
+          <div class="badge-crops">
+            <span class="crop-mini-pill">
+              <span class="pulse-dot"></span> 🌾 Rice
+            </span>
+            <span class="crop-mini-pill">
+              <span class="pulse-dot" style="background:#f4a261; box-shadow:0 0 10px #f4a261;"></span> 🥜 Groundnut
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. Crop Information Section (Featured: Rice & Groundnut)
+       ======================================================================== -->
+  <section class="crop-section" id="crops">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-seedling"></i> Complete Agronomy Repository</span>
+        <h2 class="section-title">Crop Knowledge & Cultivation Guides</h2>
+        <p class="section-subtitle">
+          Scientific packages of practices, nutrient schedules, irrigation regimes, and pest management specifically curated for Rice (Paddy), Groundnut (Peanut), and major seasonal crops.
+        </p>
+      </div>
+
+      <!-- Search & Filters -->
+      <div class="crop-search-bar">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" id="cropSearchInput" placeholder="Search crops (e.g. Rice, Groundnut, Wheat, Kharif)..." aria-label="Search crops">
+      </div>
+
+      <div class="crop-filters">
+        <button class="filter-btn active" data-filter="all">All Crops</button>
+        <button class="filter-btn" data-filter="Cereals">Cereals & Grains</button>
+        <button class="filter-btn" data-filter="Oilseeds">Oilseeds (Groundnut)</button>
+        <button class="filter-btn" data-filter="Cash Crops">Cash Crops</button>
+        <button class="filter-btn" data-filter="Vegetables">Vegetables</button>
+      </div>
+
+      <!-- Dynamic Crops Grid -->
+      <div class="crops-grid" id="cropsGrid">
+        <!-- Rendered dynamically by js/app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Crop Details In-Depth Modal
+       ======================================================================== -->
+  <div class="modal-backdrop" id="cropModalBackdrop" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="crop-modal-content">
+      <button class="modal-close-btn" id="modalCloseBtn" aria-label="Close modal">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+
+      <div class="modal-header-hero">
+        <img id="modalHeroImg" src="" alt="Crop Banner" class="modal-hero-img">
+        <div class="modal-hero-overlay">
+          <h2 id="modalCropName" style="font-size: 1.8rem; font-weight: 800; margin-bottom: 2px;"></h2>
+          <p id="modalScientific" style="font-style: italic; opacity: 0.9; font-size: 0.95rem;"></p>
+        </div>
+      </div>
+
+      <div class="modal-body">
+        <div class="modal-tabs">
+          <button class="modal-tab-btn active" data-tab="overview">Overview & Soil</button>
+          <button class="modal-tab-btn" data-tab="cultivation">Cultivation Timeline</button>
+          <button class="modal-tab-btn" data-tab="diseases">Diseases & IPM</button>
+          <button class="modal-tab-btn" data-tab="market">Market & Yield</button>
+        </div>
+
+        <!-- Tab 1: Overview -->
+        <div class="modal-tab-pane active" id="tab-overview">
+          <p id="modalOverviewText" style="line-height: 1.7; margin-bottom: 20px; color: var(--text-main);"></p>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 14px;">
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-earth-americas"></i> Optimal Soil</div>
+              <div id="modalSoilInfo" style="font-weight: 700; font-size: 0.9rem; margin-top: 4px;"></div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-vial"></i> Soil pH</div>
+              <div id="modalPhInfo" style="font-weight: 700; font-size: 0.9rem; margin-top: 4px;"></div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-scale-balanced"></i> Expected Yield</div>
+              <div id="modalYieldInfo" style="font-weight: 700; font-size: 0.9rem; margin-top: 4px;"></div>
+            </div>
+            <div style="background: var(--bg-card-subtle); padding: 14px; border-radius: var(--radius-sm); border: 1px solid var(--border-light);">
+              <div style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-regular fa-clock"></i> Growth Duration</div>
+              <div id="modalDurationInfo" style="font-weight: 700; font-size: 0.9rem; margin-top: 4px;"></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: Cultivation Timeline -->
+        <div class="modal-tab-pane" id="tab-cultivation">
+          <div class="cultivation-timeline" id="modalCultivationTimeline">
+            <!-- Timeline steps inserted here -->
+          </div>
+        </div>
+
+        <!-- Tab 3: Diseases -->
+        <div class="modal-tab-pane" id="tab-diseases">
+          <div id="modalDiseasesList">
+            <!-- Major diseases inserted here -->
+          </div>
+        </div>
+
+        <!-- Tab 4: Market -->
+        <div class="modal-tab-pane" id="tab-market">
+          <div id="modalMarketInfo">
+            <!-- Market info inserted here -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========================================================================
+       3. Farming Tips Section
+       ======================================================================== -->
+  <section class="tips-section" id="tips">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-lightbulb"></i> Best Practices</span>
+        <h2 class="section-title">Modern & Sustainable Farming Tips</h2>
+        <p class="section-subtitle">
+          Proven agronomic techniques to minimize water wastage, restore soil microbiology, curtail chemical dependencies, and boost farm profitability.
+        </p>
+      </div>
+
+      <div class="tips-grid">
+        <!-- Tip 1 -->
+        <div class="tip-card">
+          <div class="tip-icon-box">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3>Precision Drip & Alternate Wetting</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Water management is the key differentiator between profit and loss.
+          </p>
+          <ul class="tip-steps-list">
+            <li>In Rice, use <strong>Alternate Wetting and Drying (AWD)</strong> via perforated pani-pipe to save 25-30% water without yield reduction.</li>
+            <li>In Groundnut, install inline drip irrigation (2.0 LPH drippers) to maintain friable soil during underground pegging.</li>
+            <li>Schedule irrigation during cool early mornings to cut evaporation losses.</li>
+          </ul>
+        </div>
+
+        <!-- Tip 2 -->
+        <div class="tip-card">
+          <div class="tip-icon-box" style="background: rgba(233, 196, 106, 0.2); color: #8c531b;">
+            <i class="fa-solid fa-cubes-stacked"></i>
+          </div>
+          <h3>Groundnut Pegging & Gypsum Strategy</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Gypsum application is the single most crucial factor for groundnut pod filling.
+          </p>
+          <ul class="tip-steps-list">
+            <li>Broadcast <strong>Gypsum @ 400 - 500 kg/ha</strong> at 40-45 DAS (flowering to peg entry).</li>
+            <li>Calcium directly enters developing pods, preventing "pops" (empty unfertilized shells).</li>
+            <li>Do not disturb soil with deep cultivators after peg initiation.</li>
+          </ul>
+        </div>
+
+        <!-- Tip 3 -->
+        <div class="tip-card">
+          <div class="tip-icon-box" style="background: rgba(82, 183, 136, 0.2); color: var(--primary-700);">
+            <i class="fa-solid fa-flask"></i>
+          </div>
+          <h3>Balanced NPK & Micronutrient Priming</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Overdosing with Nitrogen invites pests like BPH and Rice Blast.
+          </p>
+          <ul class="tip-steps-list">
+            <li>Apply basal Zinc Sulphate (25 kg/ha) to prevent Khaira disease in paddy.</li>
+            <li>Split Urea into 3 doses: 50% basal, 25% at tillering, and 25% at panicle emergence.</li>
+            <li>Incorporate green manuring crops like *Dhaincha* (Sesbania) prior to main crop sowing.</li>
+          </ul>
+        </div>
+
+        <!-- Tip 4 -->
+        <div class="tip-card">
+          <div class="tip-icon-box" style="background: rgba(244, 162, 97, 0.2); color: #b25816;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <h3>Bio-Pesticides & IPM Strategy</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Combine biological parasitoids and organic extracts for sustainable pest control.
+          </p>
+          <ul class="tip-steps-list">
+            <li>Deploy yellow sticky traps @ 10/acre for thrips and aphids in groundnut and vegetables.</li>
+            <li>Spray 5% Neem Seed Kernel Extract (NSKE) at early vegetative stages.</li>
+            <li>Use pheromone traps for Rice Yellow Stem Borer to monitor moth surges.</li>
+          </ul>
+        </div>
+
+        <!-- Tip 5 -->
+        <div class="tip-card">
+          <div class="tip-icon-box">
+            <i class="fa-solid fa-spa"></i>
+          </div>
+          <h3>Soil Health Card & Composting</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Replenish soil organic carbon for sustained multi-year fertility.
+          </p>
+          <ul class="tip-steps-list">
+            <li>Test soil pH and organic carbon every two years before Kharif sowing.</li>
+            <li>Incorporate 2 tonnes of enriched Vermicompost alongside Trichoderma culture.</li>
+            <li>Avoid burning crop stubble; mulching retains soil moisture and beneficial earthworms.</li>
+          </ul>
+        </div>
+
+        <!-- Tip 6 -->
+        <div class="tip-card">
+          <div class="tip-icon-box" style="background: rgba(2, 136, 209, 0.2); color: #0288d1;">
+            <i class="fa-solid fa-drone"></i>
+          </div>
+          <h3>Smart Agri-Drones & Weather Windows</h3>
+          <p style="color: var(--text-muted); font-size: 0.92rem;">
+            Leverage precision technology for ultra-low volume foliar applications.
+          </p>
+          <ul class="tip-steps-list">
+            <li>Drone spraying cuts water usage by 80% and covers an acre within 7-10 minutes.</li>
+            <li>Never spray when wind velocity exceeds 15 km/h to prevent chemical drift.</li>
+            <li>Always check our live **Weather & Spray Advisory** widget before scheduling operations.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. AI Agriculture Assistant Section
+       ======================================================================== -->
+  <section class="ai-assistant-section" id="ai-assistant">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-robot"></i> 24/7 Smart Agronomist</span>
+        <h2 class="section-title">AI Agriculture Assistant</h2>
+        <p class="section-subtitle">
+          Ask any question regarding crop pests, fertilizer dosages, groundnut pegging care, rice blast management, or PM-Kisan government schemes. Click the speaker icon to listen!
+        </p>
+      </div>
+
+      <div class="assistant-container">
+        <!-- Sidebar with Presets -->
+        <div class="assistant-sidebar">
+          <div class="ai-avatar-card">
+            <div class="ai-avatar">
+              <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+            <h3 style="font-size: 1.15rem; font-weight: 700;">Krushi AI Advisor</h3>
+            <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2px;">Trained on Agricultural Research Datasets</p>
+          </div>
+
+          <div class="preset-topics">
+            <h4>Quick Agro-Queries</h4>
+            <div class="preset-chips">
+              <button class="chip-btn" data-prompt="How to treat Rice Blast?">
+                <i class="fa-solid fa-disease" style="color: #c62828;"></i>
+                <span>How to treat Rice Blast?</span>
+              </button>
+              <button class="chip-btn" data-prompt="When and why to apply Gypsum in Groundnut?">
+                <i class="fa-solid fa-cubes-stacked" style="color: #8c531b;"></i>
+                <span>Groundnut Gypsum & Pegging</span>
+              </button>
+              <button class="chip-btn" data-prompt="How to control Rice Stem Borer?">
+                <i class="fa-solid fa-bug" style="color: #2d6a4f;"></i>
+                <span>Rice Stem Borer Solution</span>
+              </button>
+              <button class="chip-btn" data-prompt="What are the subsidies for Drip Irrigation?">
+                <i class="fa-solid fa-faucet-drip" style="color: #0288d1;"></i>
+                <span>Drip Irrigation Subsidies</span>
+              </button>
+              <button class="chip-btn" data-prompt="How to prepare Organic Jeevamrut?">
+                <i class="fa-solid fa-leaf" style="color: #52b788;"></i>
+                <span>Organic Jeevamrut Recipe</span>
+              </button>
+              <button class="chip-btn" data-prompt="What are ideal weather conditions for foliar spray?">
+                <i class="fa-solid fa-wind" style="color: #e9c46a;"></i>
+                <span>Weather Spray Guidelines</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Chat Viewport -->
+        <div class="chat-viewport">
+          <div class="chat-header">
+            <div class="chat-status">
+              <span class="pulse-dot"></span>
+              <span>Online • Ready for Voice & Text Queries</span>
+            </div>
+            <button class="btn-icon-pill" id="clearChatBtn" title="Clear Chat History" style="width: 32px; height: 32px;">
+              <i class="fa-solid fa-rotate-right" style="font-size: 0.8rem;"></i>
+            </button>
+          </div>
+
+          <div class="chat-messages" id="chatMessages">
+            <!-- Initial Greeting -->
+            <div class="chat-bubble bot">
+              <div style="font-weight: 700; color: var(--primary-700); margin-bottom: 4px;">
+                🌱 Smart Krushi AI Assistant
+              </div>
+              <p>
+                Namaste! Welcome to Smart Krushi. I am your specialized AI Agronomist. 
+                Whether you are managing a <strong>Rice paddy field</strong>, preparing <strong>Groundnut crops</strong>, diagnosing crop spots, or calculating NPK fertilizers, ask me anything below or select a quick topic!
+              </p>
+            </div>
+          </div>
+
+          <!-- Input Controls -->
+          <div class="chat-input-bar">
+            <input 
+              type="text" 
+              class="chat-input-field" 
+              id="chatInput" 
+              placeholder="Ask anything (e.g. 'How to cure Groundnut Tikka?', 'SRI Rice technique')..." 
+              aria-label="Ask AI Assistant"
+            />
+            <button class="chat-send-btn" id="sendChatBtn" aria-label="Send query">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. Crop Disease Detection Section
+       ======================================================================== -->
+  <section class="disease-section" id="disease-detect">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-microscope"></i> Computer Vision Scanner</span>
+        <h2 class="section-title">Instant Crop Disease Detection</h2>
+        <p class="section-subtitle">
+          Upload an image of an affected leaf or test with our curated samples. Our AI scanner detects necrotic lesions, fungal blast, bacterial blights, and rust with scientific accuracy.
+        </p>
+      </div>
+
+      <div class="disease-grid">
+        <!-- Scanner Upload Frame -->
+        <div class="scanner-card" id="scannerDropZone">
+          <div class="viewport-scanner-frame">
+            <!-- Placeholder -->
+            <div class="scanner-placeholder" id="scannerPlaceholder">
+              <i class="fa-solid fa-cloud-arrow-up"></i>
+              <div style="font-weight: 600; font-size: 1.05rem;">Drag & Drop Leaf Photo Here</div>
+              <div style="font-size: 0.82rem; opacity: 0.75;">Supports PNG, JPG, JPEG up to 10MB</div>
+            </div>
+
+            <!-- Image Preview -->
+            <img id="scannerPreviewImg" src="" alt="Crop Leaf Scan" class="preview-image">
+
+            <!-- Cybernetic Laser HUD -->
+            <div class="scanning-hud" id="scanningHud">
+              <div class="laser-line"></div>
+              <div class="hud-corner hud-top-left"></div>
+              <div class="hud-corner hud-top-right"></div>
+              <div class="hud-corner hud-bottom-left"></div>
+              <div class="hud-corner hud-bottom-right"></div>
+              <div class="hud-reading" id="hudReading">CALIBRATING SENSORS...</div>
+            </div>
+          </div>
+
+          <div style="display: flex; gap: 12px; justify-content: center;">
+            <label class="btn btn-primary" style="cursor: pointer;">
+              <i class="fa-solid fa-upload"></i> Upload Leaf Image
+              <input type="file" id="leafImageInput" accept="image/*" style="display: none;">
+            </label>
+          </div>
+
+          <!-- Sample Quick-Test Buttons -->
+          <div class="samples-container">
+            <p><i class="fa-solid fa-vial"></i> Or Test with Curated Field Samples:</p>
+            <div class="sample-pills">
+              <button class="sample-pill-btn" data-sample="sample_rice_blast">🌾 Rice Blast</button>
+              <button class="sample-pill-btn" data-sample="sample_groundnut_tikka">🥜 Groundnut Tikka</button>
+              <button class="sample-pill-btn" data-sample="sample_rice_blight">🌾 Rice Bacterial Blight</button>
+              <button class="sample-pill-btn" data-sample="sample_groundnut_rust">🥜 Groundnut Rust</button>
+              <button class="sample-pill-btn" data-sample="sample_healthy_rice">✅ Healthy Rice Paddy</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Diagnosis Result Card -->
+        <div class="diagnosis-result-card" id="diagnosisResultCard">
+          <!-- Empty State -->
+          <div class="empty-diagnosis-state" id="emptyDiagnosisState">
+            <i class="fa-solid fa-camera-viewfinder"></i>
+            <h3 style="font-size: 1.3rem; margin-bottom: 8px;">Awaiting Scan Input</h3>
+            <p style="font-size: 0.92rem; max-width: 380px; margin: 0 auto;">
+              Upload a picture of your crop leaf or pick a sample on the left to generate an instant diagnosis with treatment protocols.
+            </p>
+          </div>
+
+          <!-- Active Result Content -->
+          <div class="result-content-view" id="resultContentView">
+            <div class="result-header-row">
+              <div>
+                <span id="diagCropName" style="font-size: 0.85rem; font-weight: 700; color: var(--primary-600); text-transform: uppercase;"></span>
+                <h3 id="diagDiseaseName" style="font-size: 1.45rem; font-weight: 800; color: var(--text-main); margin-top: 4px;"></h3>
+              </div>
+              <div style="text-align: right;">
+                <div class="confidence-badge" id="diagConfidence"></div>
+                <div style="margin-top: 6px;"><span id="diagSeverity" class="severity-pill"></span></div>
+              </div>
+            </div>
+
+            <!-- Symptoms -->
+            <div style="margin-bottom: 16px;">
+              <h5 style="font-size: 0.9rem; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Observed Symptoms</h5>
+              <ul id="diagSymptomsList" style="font-size: 0.9rem; padding-left: 18px; color: var(--text-main); line-height: 1.6;"></ul>
+            </div>
+
+            <!-- Treatment Box -->
+            <div class="remedy-box">
+              <h5><i class="fa-solid fa-pills"></i> Recommended Chemical Control:</h5>
+              <p id="diagChemical" style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5;"></p>
+            </div>
+
+            <div class="remedy-box" style="border-left-color: #2e7d32; background: rgba(82, 183, 136, 0.08);">
+              <h5 style="color: #2e7d32;"><i class="fa-solid fa-leaf"></i> Organic & Biological Remedy:</h5>
+              <p id="diagOrganic" style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5;"></p>
+            </div>
+
+            <div class="remedy-box" style="border-left-color: var(--earth-gold); background: rgba(233, 196, 106, 0.1);">
+              <h5 style="color: #7b5900;"><i class="fa-solid fa-shield-halved"></i> Cultural Prevention:</h5>
+              <p id="diagPrevention" style="font-size: 0.88rem; color: var(--text-main); line-height: 1.5;"></p>
+            </div>
+
+            <div style="margin-top: 20px; display: flex; justify-content: flex-end;">
+              <button class="btn btn-secondary" id="printDiagnosisBtn" style="padding: 8px 18px; font-size: 0.85rem;">
+                <i class="fa-solid fa-print"></i> Print / Save Advisory Report
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. Live Weather & Agro-Advisory Section
+       ======================================================================== -->
+  <section class="weather-section" id="weather">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-cloud-sun"></i> Agro-Meteorology</span>
+        <h2 class="section-title">Live Weather & Precision Spray Advisory</h2>
+        <p class="section-subtitle">
+          Hyper-local microclimate parameters, rain probabilities, soil moisture estimates, and smart foliar spray windows for farm planning.
+        </p>
+      </div>
+
+      <div class="weather-dashboard">
+        <div class="weather-header-row">
+          <div>
+            <h3 id="weatherCityName" style="font-size: 1.45rem; font-weight: 800; color: var(--text-main);">Nashik, Maharashtra</h3>
+            <span style="font-size: 0.85rem; color: var(--text-muted);"><i class="fa-solid fa-location-dot"></i> Western Ghats / Onion, Grape & Groundnut Zone</span>
+          </div>
+
+          <!-- Quick Agricultural Zone Switcher -->
+          <div class="location-picker-group">
+            <button class="city-quick-btn active" data-city="nashik">Nashik (MH)</button>
+            <button class="city-quick-btn" data-city="rajkot">Rajkot (GJ Groundnut)</button>
+            <button class="city-quick-btn" data-city="guntur">Guntur (AP Rice)</button>
+            <button class="city-quick-btn" data-city="ludhiana">Ludhiana (PB)</button>
+          </div>
+        </div>
+
+        <div class="weather-main-grid">
+          <!-- Current Weather Banner -->
+          <div class="current-weather-card">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start;">
+              <div>
+                <span style="text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; opacity: 0.85;">Current Field Weather</span>
+                <div class="weather-temp-row">
+                  <span class="current-temp" id="weatherTemp">27°C</span>
+                  <span id="weatherCondition" style="font-size: 1.2rem; font-weight: 600;">Partly Cloudy</span>
+                </div>
+              </div>
+              <i id="weatherMainIcon" class="fa-solid fa-cloud-sun weather-icon-large"></i>
+            </div>
+
+            <!-- Dynamic Agro-Advisory Banner -->
+            <div class="weather-agro-advisory">
+              <strong><i class="fa-solid fa-bell"></i> Agricultural Advisory: </strong>
+              <span id="weatherAdvisoryText">Favorable conditions for foliar nutrient sprays in early morning. Monitor groundnut fields for early tikka leaf spot due to overnight dew.</span>
+            </div>
+          </div>
+
+          <!-- Metrics Matrix -->
+          <div class="weather-metrics-grid">
+            <div class="metric-card">
+              <i class="fa-solid fa-droplet"></i>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Relative Humidity</div>
+                <div id="metricHumidity" style="font-size: 1.25rem; font-weight: 800;">68%</div>
+                <div style="font-size: 0.72rem; color: var(--primary-600);">High Fungal Risk if >80%</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-wind"></i>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Wind Velocity</div>
+                <div id="metricWind" style="font-size: 1.25rem; font-weight: 800;">11 km/h</div>
+                <div style="font-size: 0.72rem; color: #2e7d32;">Optimal Spray Drift (<15km/h)</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-cloud-rain"></i>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Precipitation Chance</div>
+                <div id="metricRainProb" style="font-size: 1.25rem; font-weight: 800;">15%</div>
+                <div style="font-size: 0.72rem; color: #2e7d32;">Safe Spray Window Today</div>
+              </div>
+            </div>
+
+            <div class="metric-card">
+              <i class="fa-solid fa-mountain-sun"></i>
+              <div>
+                <div style="font-size: 0.8rem; color: var(--text-muted);">Soil Moisture Index</div>
+                <div id="metricSoilMoisture" style="font-size: 1.25rem; font-weight: 800;">Optimal (62%)</div>
+                <div style="font-size: 0.72rem; color: var(--primary-600);">Favorable for Root Aeration</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5-Day Agro Forecast -->
+        <h4 style="font-size: 1rem; color: var(--text-main); margin-bottom: 14px;">
+          <i class="fa-solid fa-calendar-days" style="color: var(--primary-500);"></i> 5-Day Precision Farm Forecast
+        </h4>
+        <div class="forecast-days-row" id="forecastRow">
+          <!-- Populated by js/app.js -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. About Us Section
+       ======================================================================== -->
+  <section class="about-section" id="about">
+    <div class="container about-grid">
+      <div class="about-img-collage">
+        <img 
+          src="https://images.unsplash.com/photo-1595974482597-4b8da8879bc5?auto=format&fit=crop&w=900&q=80" 
+          alt="Happy farmer in lush agricultural fields" 
+          class="about-main-img"
+        />
+        <div class="about-floating-card">
+          <i class="fa-solid fa-award" style="font-size: 2.2rem; color: var(--earth-gold);"></i>
+          <div>
+            <div style="font-weight: 800; font-size: 1.1rem; color: var(--primary-700);">AI For Bharat</div>
+            <div style="font-size: 0.78rem; color: var(--text-muted);">Digitizing traditional farming wisdom with neural networks</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="about-info">
+        <span class="section-badge"><i class="fa-solid fa-seedling"></i> About Smart Krushi</span>
+        <h2 class="section-title">Bridging Agricultural Science & Modern Artificial Intelligence</h2>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 20px;">
+          <strong>Smart Krushi</strong> was established with a singular mission: to make world-class agronomic expertise directly accessible to every farmer, student, and agro-entrepreneur in their native language and on any smart device.
+        </p>
+        <p style="color: var(--text-muted); line-height: 1.7; margin-bottom: 24px;">
+          Specializing in crucial Indian crops such as <strong>Rice (Paddy)</strong> and <strong>Groundnut (Peanut)</strong>, our platform combines computer vision disease scanning, micro-weather advisories, and an interactive AI agronomist trained on verified university research.
+        </p>
+
+        <div class="about-pillars">
+          <div class="pillar-item">
+            <i class="fa-solid fa-hand-holding-droplet" style="font-size: 1.5rem; color: var(--primary-500);"></i>
+            <h4>Water & Resource Saving</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Cutting water usage by up to 40% via drip irrigation & AWD schedules.</p>
+          </div>
+          <div class="pillar-item">
+            <i class="fa-solid fa-brain" style="font-size: 1.5rem; color: var(--earth-gold);"></i>
+            <h4>Scientific AI Diagnosis</h4>
+            <p style="font-size: 0.85rem; color: var(--text-muted);">Instant leaf scanning identifying pathogens before widespread crop damage.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. Contact & Emergency Helpline Section
+       ======================================================================== -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <div class="text-center">
+        <span class="section-badge"><i class="fa-solid fa-headset"></i> Get In Touch</span>
+        <h2 class="section-title">Farmer Helpline & Expert Support</h2>
+        <p class="section-subtitle">
+          Have an urgent crop emergency, or want to collaborate with agricultural universities? Reach out through our instant advisory form or contact the national Kisan helpline.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <!-- Contact Information Card -->
+        <div class="contact-info-card">
+          <div>
+            <h3 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 8px;">Direct Support Channels</h3>
+            <p style="font-size: 0.95rem; opacity: 0.9; line-height: 1.6;">
+              Our dedicated agronomy desk operates 7 days a week to ensure your crop queries are answered promptly.
+            </p>
+
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-phone-volume"></i></div>
+              <div>
+                <div style="font-size: 0.82rem; opacity: 0.8;">Kisan Call Center (Toll-Free)</div>
+                <div style="font-weight: 700; font-size: 1.1rem;"><a href="tel:18001801551" style="color: white;">1800-180-1551</a></div>
+                <div style="font-size: 0.75rem; opacity: 0.7;">Available 6:00 AM to 10:00 PM (All 22 Languages)</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-solid fa-envelope"></i></div>
+              <div>
+                <div style="font-size: 0.82rem; opacity: 0.8;">Agronomy Advisory Email</div>
+                <div style="font-weight: 700; font-size: 1.05rem;">advisory@smartkrushi.org</div>
+              </div>
+            </div>
+
+            <div class="contact-method">
+              <div class="contact-method-icon"><i class="fa-brands fa-whatsapp"></i></div>
+              <div>
+                <div style="font-size: 0.82rem; opacity: 0.8;">WhatsApp Farmer Community</div>
+                <div style="font-weight: 700; font-size: 1.05rem;">+91 98765 43210</div>
+              </div>
+            </div>
+          </div>
+
+          <div style="padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.15);">
+            <div style="font-size: 0.85rem; opacity: 0.85;">
+              <i class="fa-solid fa-shield-heart" style="color: var(--earth-gold);"></i> Free advisory services for small and marginal farmers across India.
+            </div>
+          </div>
+        </div>
+
+        <!-- Contact & Query Form -->
+        <div class="contact-form-card">
+          <h3 style="font-size: 1.4rem; font-weight: 700; margin-bottom: 20px;">
+            Submit an Agronomy Query
+          </h3>
+          <form id="krushiContactForm">
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contactName">Farmer / Student Name *</label>
+                <input type="text" id="contactName" class="form-input" placeholder="e.g. Ramesh Kumar" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactPhone">Phone / WhatsApp *</label>
+                <input type="tel" id="contactPhone" class="form-input" placeholder="+91 98765 00000" required>
+              </div>
+            </div>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+              <div class="form-group">
+                <label class="form-label" for="contactCrop">Target Crop</label>
+                <select id="contactCrop" class="form-select">
+                  <option value="Rice (Paddy)">Rice (Paddy / धान)</option>
+                  <option value="Groundnut (Peanut)">Groundnut (Peanut / मूंगफली)</option>
+                  <option value="Wheat">Wheat (गेहूं)</option>
+                  <option value="Cotton">Cotton (कपास)</option>
+                  <option value="Maize">Maize (मक्का)</option>
+                  <option value="Tomato / Vegetables">Vegetables / Horticulture</option>
+                  <option value="Other">Other Crop</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contactLocation">District & State</label>
+                <input type="text" id="contactLocation" class="form-input" placeholder="e.g. Nashik, MH">
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contactMsg">Describe Crop Problem or Inquiry *</label>
+              <textarea id="contactMsg" class="form-textarea" placeholder="Detail symptoms like leaf spots, yellowing, water logging, pest sighting, or crop stage..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Send Advisory Request
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       Footer
+       ======================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="brand-logo" style="color: white;">
+            <div class="brand-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <span>Smart Krushi</span>
+          </div>
+          <p>
+            An AI-first agricultural learning and precision farming ecosystem dedicated to sustainable farming practices, crop health diagnostics, and rural prosperity.
+          </p>
+          <div style="display: flex; gap: 12px; font-size: 1.2rem;">
+            <a href="#" style="color: #95d5b2;"><i class="fa-brands fa-youtube"></i></a>
+            <a href="#" style="color: #95d5b2;"><i class="fa-brands fa-facebook"></i></a>
+            <a href="#" style="color: #95d5b2;"><i class="fa-brands fa-x-twitter"></i></a>
+            <a href="#" style="color: #95d5b2;"><i class="fa-brands fa-instagram"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#crops">Crop Information</a></li>
+            <li><a href="#tips">Farming Tips</a></li>
+            <li><a href="#ai-assistant">AI Assistant</a></li>
+            <li><a href="#disease-detect">Disease Detection</a></li>
+            <li><a href="#weather">Live Weather</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Key Crops</h4>
+          <ul class="footer-links">
+            <li><a href="#crops">Rice (Paddy) Guide</a></li>
+            <li><a href="#crops">Groundnut Pegging Care</a></li>
+            <li><a href="#crops">Wheat Crop System</a></li>
+            <li><a href="#crops">Bt Cotton Management</a></li>
+            <li><a href="#crops">Vegetable Fertigation</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Agro Newsletter</h4>
+          <p style="font-size: 0.88rem; color: #a3c4ab; line-height: 1.5;">
+            Subscribe for seasonal sowing alerts, pest outbreak warnings, and market mandi updates.
+          </p>
+          <div class="newsletter-box">
+            <input type="email" placeholder="Enter your email" aria-label="Email Address">
+            <button class="btn btn-primary" style="padding: 10px 18px; border-radius: var(--radius-full);">Join</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Smart Krushi Platform. All rights reserved. Developed for Agricultural Excellence.
+        </div>
+        <div style="display: flex; gap: 20px;">
+          <a href="#home">Privacy Policy</a>
+          <a href="#home">Terms of Service</a>
+          <a href="#contact">Farmer Helpline</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/crops-data.js"></script>
+  <script src="js/ai-knowledge.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
